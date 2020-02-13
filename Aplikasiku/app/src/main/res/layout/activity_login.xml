@@ -1,9 +1,444 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="#FFFFFF"
 	tools:context=".LoginActivity">
+
+	<TextView
+		android:id="@+id/welcome_back"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:fontFamily="@font/montserrat_semi_bold"
+		android:text="Welcome Back"
+		android:textColor="#313131"
+		android:textSize="32sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:layout_marginTop="90dp"
+		/>
+	<TextView
+		android:id="@+id/sign_in"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:layout_marginTop="8dp"
+		android:fontFamily="@font/montserrat_light"
+		android:text="@string/sign_in_to_continue"
+		android:textColor="#9b9b9b"
+		android:textSize="16sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/welcome_back" />
+	<TextView
+		android:id="@+id/reset_code"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="48dp"
+		android:text="Username"
+		android:textColor="#313131"
+		android:textSize="20sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/sign_in" />
+	<EditText
+		android:id="@+id/edt_reset_code"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginRight="24dp"
+		android:hint="Enter Your Email"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/reset_code"
+		/>
+	<TextView
+		android:id="@+id/new_password"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="8dp"
+		android:text="Password"
+		android:textColor="#313131"
+		android:textSize="20sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/edt_reset_code" />
+
+	Ketik untuk mencari
+	Pemrograman Mobile
+	1. Persiapan Android
+	Android
+	Git
+	Install Java SDK
+	Instalasi Android Studio
+	Instalasi Emulator Android
+	Developer Options
+	Hello Android
+	Tugas
+	2. Pengenalan Android Studio
+	Tour Android Studio
+	Struktur Folder Project
+	Version Control
+	Tugas
+	3. Activity dan Desain Layout
+	Android Activity Lifecycle
+	Linear Layout
+	Relative Layout
+	Constraint Layout
+	Latihan Konversi Layout
+	Latihan Konversi Layout 2
+	Dipublikasikan dengan GitBook
+	Latihan 2
+	Persiapan
+	Bukalah project Aplikasiku pada starter code yang sudah disediakan, dalam project ini sudah disediakan screen layout desain serta asset yang akan digunakan untuk membuat aplikasi.
+
+	Screen Layout Desain
+	Screen layout desain sudah disediakan di dalam starter code layout ini. Layout dapat Anda lihat pada folder design. Untuk melihat isi folder design, ganti view pada Android Studio menjadi project
+
+	folder design
+
+	Cara Import Drawable
+	Untuk mengubah desain layout menjadi layout android xml, diperlukan asset berupa potongan gambar yang sudah disesuaikan ukurannya. Resolusi asset pada Android mulai dari hdpi, mdpi, xdpi, xxhdpi, dan xxxhdpi. Untuk semua layout pada folder design sudah dipotongkan dan disiapkan gambarnya di dalam starter code.
+
+	Jika anda ingin mengetahui proses import drawable, sebagai informasi tambahan proses untuk memasukkan aset gambar ke folder res pada Android Studio dilakukan dengan cara berikut,
+
+	Buka tab Resource Manager resource manager
+	Klik tombol + resource manager plus
+	Pilih menu import drawables import drawable
+	Select semua folder kemudian klik open import
+	Pilih gambar yang akan di import kemudian klik import import again
+	Cara Import Custom Font
+	Pada starter code juga sudah disediakan dua varian custom font yang dapat digunakan pada layout android. Untuk mengimport custom font dilakukan dengan langkah langkah berikut,
+
+	Klik kanan pada folder res kemudian pilih New -> Android Resource Directory
+	import font
+
+	Pada Resource type, pilih font font
+
+	Copy dan paste custom font yang Anda miliki ke dalam folder font yang Anda buat sebelumnya.
+
+	Catatan: Font yang Anda copy kedalam folder harus menggunakan huruf kecil dan disambungkan dengan menggunakan underscore jika lebih dari satu suku kata.
+
+	Splashscreen
+	Splash screen merupakan tampilan awal yang pertama kali dibuka ketika aplikasi dijalankan. Ada banyak aplikasi yang menggunakan splash screen, namun ada juga yang tidak menggunakannya.
+
+	Buka Main Activity
+	Bukalah file MainActivity.java, file ini akan kita jadikan sebagai splash screen. Pada file MainActivity.java, Anda akan menemukan bahwa pada fungsi onCreate, layout yang dipanggil atau di tampilkan adalah activity_main.xml. Oleh karena itu, untuk mengubah tampilannya kita harus mengubah isi dari file activity_main.xml
+
+	Edit file activity_main.xml
+	Lakukan langkah langkah berikut untuk membuat splash screen. Desain yang diinginkan untuk splash screen dapat Anda lihat pada folder design.
+
+	splash
+
+	Tambahkan Logo
+	Hapuslah TextView Hello World dari halaman activity_main.xml
+	Buatlah sebuah ImageView dan atur posisinya di tengah layar dengan menggunakan constraint layout
+	<ImageView
+		android:id="@+id/imageView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="8dp"
+		android:src="@drawable/ic_logo"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	Tambahkan Text
+	Buatlah sebuah TextView dengan font montsterrat semi bold dan ganti teks sesuai dengan nama aplikasi yang ingin anda buat.
+
+	Jangan menggunakan teks DTS Kominfo sebagai teks splash screen.
+
+	Letakkan TextView tersebut dibawah logo dengan jarak 8dp.
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:fontFamily="@font/montserrat_semi_bold"
+		android:textSize="20sp"
+		android:text="@string/logo_text"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/imageView" />
+	Commit semua perubahan yang telah anda lakukan, kemudian push ke akun GitHub anda!
+
+	Welcome Activity
+	Welcome activity adalah activity yang di jalankan setelah splash screen. Pada activity welcome ini, akan ditampilkan secara singkat fitur-fitur aplikasi. Berikut ini screenshoot tampilan aplikasi yang diharapkan.
+
+	welcome
+
+	Edit File activity_welcome_slide.xml
+	Langkah selanjutnya adalah mengubah isi file activity_welcome_slide.xml. Jenis layout yang digunakan adalah constraint layout. Pastikan layout xml dimulai dengan tag berikut ini. Tambahkan background warna putih.
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#FFFFFF"
+		tools:context=".WelcomeSlide">
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+	Pada desain layout terdapat beberapa komponen, yaitu:
+
+	Gambar Character dengan Calender
+	Text Welcome
+	Sub Text Welcome
+	Text Login
+	Background Footer Merah
+	Tambahkan Gambar
+	Tambahkan gambar dengan nama ic_eventlist dari folder drawable ke layout
+
+	<ImageView
+		android:id="@+id/calendar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/ic_eventlist"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:layout_marginTop="30dp"
+		/>
+	Perhatikan penamaan id dan constraint dari image
+
+	image
+
+	Tambahkan Text
+	Tambahkan sebuah TextView dengan id welcome_text. Ganti isi teks dengan sesuai keinginan anda, sebagai contoh: Welcome To DTS VSGA
+
+	<TextView
+		android:id="@+id/welcome_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="24sp"
+		android:textColor="#313131"
+		android:text="Welcome To DTS VSGA"
+		app:layout_constraintTop_toBottomOf="@id/calendar"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:fontFamily="@font/montserrat_semi_bold"
+		/>
+	Perhatikan bagaimana TextView disusun dan bagaimana cara mengganti font serta warna dari TextView.
+
+	welcometext
+
+	Tambahkan Sub Text
+	Tambahkan sebuah sub text baru di bawah welcome_text dengan id sub_welcome
+
+	<TextView
+		android:id="@+id/sub_welcome"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="#313131"
+		android:text="What is going to happen tomorrow ?"
+		app:layout_constraintTop_toBottomOf="@+id/welcome_text"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:fontFamily="@font/montserrat_light"
+		/>
+	subtext
+
+	Tambahkan Gambar Footer
+	Tambahkan gambar footer dengan membuat sebuah ImageView dengan id background_satu. Perhatikan bahwa footer memiliki constraint ke parent bottom dan menggunakan scaleType dengan value fitXY.
+
+	<ImageView
+		android:id="@+id/background_satu"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scaleType="fitXY"
+		android:src="@drawable/bg_red"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+	footer
+
+	Tambahkan Text Login
+	Buatlah sebuah TextView dengan id login_text. Ganti font dengan montserrat_light, textSize sebesar 18sp dan textColor dengan warna #FFFFFF
+
+	<TextView
+		android:id="@+id/login_text"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:layout_marginBottom="72dp"
+		android:textColor="#FFFFFF"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Login"
+		android:textSize="18sp"
+		android:fontFamily="@font/montserrat_light"
+		/>
+	login
+
+	Commit semua perubahan yang telah anda lakukan, kemudian push ke akun GitHub anda!
+
+	Form
+	Pada praktikum kali ini akan dibuat beberapa activity, yaitu:
+
+	LoginActivity
+	ResetPasswordActivity
+	ForgotPasswordActivity
+	SuccessLoginActivity
+	SuccessResetPasswordActivity
+	Membuat LoginActivity
+	Langkah selanjutnya adalah melakukan desain layout pada file activity_welcome_back.xml. Berikut ini merupakan screenshot tampilan aplikasi yang diharapkan.
+
+	Sign In
+
+	Edit activity_login.xml
+	Untuk membuat form login seperti gambar diatas, Anda perlu mengubah isi dari file activity_login.xml. Constraint layout digunakan pada layout activity_login.xml. Pastikan layout xml dimulai dengan tag berikut ini. Tambahkan background warna putih.
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#FFFFFF"
+		tools:context=".LoginActivity">
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+	Pada desain layout terdapat beberapa komponen yaitu:
+
+	Judul
+	Sub Judul
+	Username
+	Edit Text Username
+	Password
+	Edit Text Password
+	Text Forgot Password
+	Button Login
+	Tambahkan Judul
+	Tambahkan sebuah TextView untuk menulis judul.
+
+	<TextView
+		android:id="@+id/welcome_back"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:fontFamily="@font/montserrat_semi_bold"
+		android:text="Welcome Back"
+		android:textColor="#313131"
+		android:textSize="32sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:layout_marginTop="90dp"
+		/>
+	Tambahkan Sub Judul
+	Tambahkan sebuah sub text baru di bawah judul dengan id sign_in dengan menggunakan TextView
+
+	<TextView
+		android:id="@+id/sign_in"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:layout_marginTop="8dp"
+		android:fontFamily="@font/montserrat_light"
+		android:text="@string/sign_in_to_continue"
+		android:textColor="#9b9b9b"
+		android:textSize="16sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/welcome_back" />
+	Tambahkan Username
+	Tambahkan TextView sebagai label Username
+
+	<TextView
+		android:id="@+id/reset_code"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="48dp"
+		android:text="Username"
+		android:textColor="#313131"
+		android:textSize="20sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/sign_in" />
+	Tambahkan EditText Username
+	Tambahkan EditText untuk pengisian Username
+
+	<EditText
+		android:id="@+id/edt_reset_code"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginRight="24dp"
+		android:hint="Enter Your Email"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/reset_code"
+		/>
+	Tambahkan Password
+	Tambahkan label Password menggunakan TextView
+
+	<TextView
+		android:id="@+id/new_password"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="8dp"
+		android:text="Password"
+		android:textColor="#313131"
+		android:textSize="20sp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/edt_reset_code" />
+	Tambahkan EditText Password
+	Tambahkan EditText untuk pengisian password.
+
+	<EditText
+		android:id="@+id/edt_new_password"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="24dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginRight="24dp"
+		android:hint="@string/enter_your_password"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/new_password" />
+	<TextView
+		android:id="@+id/forgot_password"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:layout_marginRight="24dp"
+		android:text="@string/forgot_password"
+		android:textColor="#313131"
+		android:textSize="18sp"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/edt_new_password"
+		/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="24dp"
+		android:layout_marginEnd="24dp"
+		android:textSize="18sp"
+		android:layout_marginBottom="200dp"
+		android:background="@drawable/button_red"
+		android:text="LOG IN"
+		android:textColor="#FFFFFF"
+		app:layout_constraintTop_toBottomOf="@id/forgot_password"
+		android:layout_marginTop="80dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		/>
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
